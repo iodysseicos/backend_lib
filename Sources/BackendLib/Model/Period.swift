@@ -11,9 +11,11 @@ import SwiftUI
 @Model
 @available(macOS 14, *)
 public class Period {
-    public @Attribute(.unique) var day: Date
+    @Attribute(.unique)
+    public var day: Date
     public var intensity: Int
-    public @Relationship(deleteRule: .cascade) var cycle: Cycle
+    @Relationship(deleteRule: .cascade)
+    public var cycle: Cycle
     public init(day: Date, intensity: Int, cycle: Cycle) {
         self.day = day
         self.intensity = intensity

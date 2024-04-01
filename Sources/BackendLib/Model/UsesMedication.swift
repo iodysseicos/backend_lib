@@ -12,8 +12,12 @@ import SwiftData
 @Model
 @available(macOS 14, *)
 public class UsesMedication {
-    public @Relationship(deleteRule: .cascade) var user: User
-    public @Relationship(deleteRule: .cascade) var medication: Medication
+    @Relationship(deleteRule: .cascade)
+    public var user: User
+    
+    @Relationship(deleteRule: .cascade)
+    public var medication: Medication
+    
     public var frequencyOfUseInDays: Int
     
     public init(user: User, medication: Medication, frequencyOfUseInDays: Int) {

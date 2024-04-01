@@ -18,10 +18,13 @@ public enum MoodType: Codable, Equatable, Hashable {
 }
 
 @Model
-public @available(macOS 14, *)
+@available(macOS 14, *)
 public class CycleMood {
     public var date: Date
-    public @Relationship(deleteRule: .cascade) var cycle: Cycle
+    
+    @Relationship(deleteRule: .cascade)
+    public var cycle: Cycle
+    
     public var mood: MoodType
     
     public init(date: Date, cycle: Cycle, mood: MoodType) {

@@ -12,7 +12,9 @@ import SwiftUI
 @available(macOS 14, *)
 public class Cycle {
     
-    public @Attribute(.unique) var startDate: Date
+    @Attribute(.unique)
+    public var startDate: Date
+    
     public var endDate: Date
     public init(startDate: Date, endDate: Date) {
         self.startDate = startDate
