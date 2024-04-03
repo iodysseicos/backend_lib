@@ -33,8 +33,8 @@ public class CycleService {
         cycles = newCycles
     }
     
-    public func createCycle() -> Cycle {
-        let cycle = Cycle(startDate: Date(), endDate: Date())
+    public func createCycle(startDate: Date, endDate: Date) -> Cycle {
+        let cycle = Cycle(startDate: startDate, endDate: endDate)
         context.insert(cycle)
         fetchCycles()
         return cycle
