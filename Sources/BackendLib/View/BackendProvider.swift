@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+@available(iOS 17, *)
 @available(macOS 14, *)
 public struct BackendProvider<Content: View>: View {
     @ViewBuilder let firstView: Content

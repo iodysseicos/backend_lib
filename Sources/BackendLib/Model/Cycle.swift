@@ -8,8 +8,9 @@
 import SwiftData
 import SwiftUI
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class Cycle {
     
     @Attribute(.unique)

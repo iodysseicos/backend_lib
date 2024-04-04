@@ -7,8 +7,9 @@
 
 import SwiftData
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class User {
     //@Attribute(.unique) var email: String
     //TODO: make email unique

@@ -8,8 +8,9 @@
 import SwiftData
 import SwiftUI
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class Period {
     @Attribute(.unique)
     public var day: Date

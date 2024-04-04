@@ -9,8 +9,9 @@ import SwiftData
 
 //This class refers to a contraceptive method or any other medication
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class Medication {
     public var name: String
     

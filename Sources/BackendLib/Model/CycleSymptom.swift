@@ -25,8 +25,9 @@ public enum SymptomType: Codable, Equatable, Hashable {
 }
 
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class CycleSymptom {
     public var day: Date
     public var symptom: SymptomType

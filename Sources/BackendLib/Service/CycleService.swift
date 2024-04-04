@@ -8,6 +8,7 @@
 import SwiftData
 import SwiftUI
 
+@available(iOS 17, *)
 @available(macOS 14, *)
 @Observable
 public class CycleService {

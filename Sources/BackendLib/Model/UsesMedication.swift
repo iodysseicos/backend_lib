@@ -9,8 +9,9 @@ import SwiftData
 
 // this class makes the relation between the user and the medication
 
-@Model
+@available(iOS 17, *)
 @available(macOS 14, *)
+@Model
 public class UsesMedication {
     @Relationship(deleteRule: .cascade)
     public var user: User
