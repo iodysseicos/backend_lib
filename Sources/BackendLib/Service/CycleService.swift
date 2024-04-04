@@ -45,26 +45,4 @@ public class CycleService {
         fetchCycles()
     }
     
-    /*
-    func getCycleSymptom(cycle: Cycle) -> [CycleSymptom] {
-        let cycledate = cycle.startDate
-        
-        var sympthonDescriptor = FetchDescriptor<CycleSymptom>(
-            predicate: #Predicate<CycleSymptom> {
-                $0.cycle.startDate == cycledate
-            }
-        )
-
-        sympthonDescriptor.includePendingChanges = true
-
-
-        let results = try? context.fetch(sympthonDescriptor)
-        var cycleSymptoms = [CycleSymptom]()
-        for result in results ?? [] {
-            cycleSymptoms.append(result)
-        }
-        
-        return cycleSymptoms
-    }
-     */
 }

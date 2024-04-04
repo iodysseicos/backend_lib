@@ -24,4 +24,7 @@ public class Cycle {
     @Relationship(deleteRule: .cascade)
     public var sympthoms: [CycleSymptom]?
     
+    @Relationship(deleteRule: .cascade)
+    public var moods: [CycleMood]?
+    
 }

@@ -11,10 +11,10 @@ import SwiftData
 import SwiftUI
 
 public enum MoodType: Codable, Equatable, Hashable {
+    case excited
     case angry
-    case sad
-    case saint
-    case evil
+    case happy
+    case sleepy
 }
 
 @Model
@@ -22,14 +22,13 @@ public enum MoodType: Codable, Equatable, Hashable {
 public class CycleMood {
     public var date: Date
     
-    @Relationship(deleteRule: .cascade)
-    public var cycle: Cycle
     
     public var mood: MoodType
     
-    public init(date: Date, cycle: Cycle, mood: MoodType) {
+    public init(date: Date, mood: MoodType) {
         self.date = date
-        self.cycle = cycle
         self.mood = mood
     }
+    
+    public var cycle: Cycle?
 }
