@@ -52,11 +52,47 @@ public class CycleService {
     }
     
     public func removeSympthom(cycle: Cycle, symptom: SymptomType, date: Date) {
+        var cycleSympthom: CycleSymptom?
+        let currentSymDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
+        for sym in cycle.sympthoms ?? [] {
+            let symDate = Calendar.current.dateComponents([.day, .year, .month], from: sym.day)
+            if [symDate.day, 
+                symDate.month,
+                symDate.year] == [currentSymDate.day,
+                                  currentSymDate.month,
+                                  currentSymDate.year]
+                && sym.symptom == symptom {
+                cycleSympthom = sym
+                break
+            }
+        }
         
+        if cycleSympthom != nil {
+            context.delete(cycleSympthom!)
+        }
+        fetchCycles()
     }
     
     public func removeMood(cycle: Cycle, moodType: MoodType, date: Date) {
+        var cycleMood: CycleMood?
+        let currentMoodDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
+        for mood in cycle.moods ?? [] {
+            let moodDate = Calendar.current.dateComponents([.day, .year, .month], from: mood.date)
+            if [moodDate.day,
+                moodDate.month,
+                moodDate.year] == [currentMoodDate.day,
+                                   currentMoodDate.month,
+                                   currentMoodDate.year]
+                && mood.mood == moodType {
+                cycleMood = mood
+                break
+            }
+        }
         
+        if cycleMood != nil {
+            context.delete(cycleMood!)
+        }
+        fetchCycles()
     }
         
 }
