@@ -20,7 +20,7 @@ public class CycleService {
         fetchCycles()
     }
     
-    public func fetchCycles() {
+    private func fetchCycles() {
         var cycleDescriptor = FetchDescriptor<Cycle>()
         cycleDescriptor.includePendingChanges = true
 
@@ -46,4 +46,17 @@ public class CycleService {
         fetchCycles()
     }
     
+    public func addMood(cycle: Cycle, moodType: MoodType, date: Date) {
+        cycle.moods?.append(CycleMood(date: date, mood: moodType))
+        fetchCycles()
+    }
+    
+    public func removeSympthom(cycle: Cycle, symptom: SymptomType, date: Date) {
+        
+    }
+    
+    public func removeMood(cycle: Cycle, moodType: MoodType, date: Date) {
+        
+    }
+        
 }

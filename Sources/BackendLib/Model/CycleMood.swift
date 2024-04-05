@@ -11,10 +11,18 @@ import SwiftData
 import SwiftUI
 
 public enum MoodType: Codable, Equatable, Hashable {
-    case excited
-    case angry
+    case calm
     case happy
+    case energetic
     case sleepy
+    case irritated
+    case anxious
+    case sad
+    case lowEnergy
+    case apathetic
+    case confused
+    case verySelfCritical
+    case emotional
 }
 
 @available(iOS 17, *)
