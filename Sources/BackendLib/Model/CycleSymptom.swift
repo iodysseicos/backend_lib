@@ -11,17 +11,20 @@ import SwiftData
 import SwiftUI
 
 public enum SymptomType: Codable, Equatable, Hashable {
-    case sensitiveBreasts
-    case cramp
-    case headache
-    case fever
-    case backache
     case acne
-    case tiredness
-    case veryHungry
-    case notHungry
-    case nausea
+    case backpain
+    case bloating
+    case constipation
+    case cramps
+    case diarrhea
+    case fever
+    case headache
     case insomnia
+    case lackofappetite
+    case largeappetite
+    case nausea
+    case tenderbreasts
+    case tiredness
 }
 
 
