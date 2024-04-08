@@ -52,6 +52,14 @@ public class CycleService {
     }
     
     public func addSexualActivity(cycle: Cycle, didHaveSex: Bool, didUseCondom: Bool, date: Date) {
+        let sexualActivity = cycle.sexualActivities?.first(where: {
+            let day = Calendar.current.dateComponents([.day, .year, .month], from: $0.day)
+            let activityDay = Calendar.current.dateComponents([.day, .year, .month], from: date)
+            return [day.day, day.month, day.year] == [activityDay.day, activityDay.month, activityDay.year]
+        })
+        if let sexualActivity {
+            context.delete(sexualActivity)
+        }
         cycle.sexualActivities?.append(SexualActivity(day: date, didHaveSex: didHaveSex, didUseCondom: didUseCondom))
         fetchCycles()
     }
