@@ -28,4 +28,6 @@ public class Cycle {
     @Relationship(deleteRule: .cascade)
     public var moods: [CycleMood]?
     
+    @Relationship(deleteRule: .cascade)
+    public var sexualActivities: [SexualActivity]?
 }

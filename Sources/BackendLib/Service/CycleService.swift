@@ -51,6 +51,11 @@ public class CycleService {
         fetchCycles()
     }
     
+    public func addSexualActivity(cycle: Cycle, didHaveSex: Bool, didUseCondom: Bool, date: Date) {
+        cycle.sexualActivities?.append(SexualActivity(day: date, didHaveSex: didHaveSex, didUseCondom: didUseCondom))
+        fetchCycles()
+    }
+    
     public func removeSympthom(cycle: Cycle, symptom: SymptomType, date: Date) {
         var cycleSympthom: CycleSymptom?
         let currentSymDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
