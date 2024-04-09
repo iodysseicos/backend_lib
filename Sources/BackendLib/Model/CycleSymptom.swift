@@ -17,7 +17,6 @@ public enum SymptomType: Codable, Equatable, Hashable {
     case constipation
     case cramps
     case diarrhea
-    case fever
     case headache
     case insomnia
     case lackofappetite
