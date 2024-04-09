@@ -118,6 +118,7 @@ public class CycleService {
             print("right: \(rightDate)")
             return rightDate
         })
+        print(cycle)
         
         return cycle
     }
