@@ -117,6 +117,9 @@ public class CycleService {
             
             var rightDate = cycleStart.year! <= dateComponents.year! && cycleEnd.year! >= dateComponents.year!
             rightDate = rightDate && cycleStart.month! <= dateComponents.month! && cycleEnd.month! >= dateComponents.month!
+            print("****************** COMPARISON ********************")
+            print("cycle date: \(c.startDate) - \(c.endDate)")
+            print("my date: \(date)")
             
             return rightDate
         })
