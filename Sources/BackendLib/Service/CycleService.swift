@@ -120,7 +120,7 @@ public class CycleService {
             print("****************** COMPARISON ********************")
             print("cycle date: \(c.startDate) - \(c.endDate)")
             print("my date: \(date)")
-            
+            print("right: \(rightDate)")
             return rightDate
         })
         
