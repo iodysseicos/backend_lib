@@ -109,14 +109,9 @@ public class CycleService {
     }
     
     public func getCycleByDate(date: Date) -> Cycle? {
-        let dateComponents = Calendar.current.dateComponents([.day, .year, .month], from: date)
         
         let cycle = cycles.first(where: { c in
-            let cycleStart = Calendar.current.dateComponents([.day, .year, .month], from: c.startDate)
-            let cycleEnd = Calendar.current.dateComponents([.day, .year, .month], from: c.endDate)
-            
-            var rightDate = cycleStart.year! <= dateComponents.year! && cycleEnd.year! >= dateComponents.year!
-            rightDate = rightDate && cycleStart.month! <= dateComponents.month! && cycleEnd.month! >= dateComponents.month!
+            var rightDate = c.startDate.timeIntervalSince1970 <= date.timeIntervalSince1970 && c.endDate.timeIntervalSince1970 >= date.timeIntervalSince1970
             print("****************** COMPARISON ********************")
             print("cycle date: \(c.startDate) - \(c.endDate)")
             print("my date: \(date)")
