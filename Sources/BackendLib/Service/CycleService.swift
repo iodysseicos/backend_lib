@@ -107,5 +107,21 @@ public class CycleService {
         }
         fetchCycles()
     }
+    
+    public func getCycleByDate(date: Date) -> Cycle? {
+        let dateComponents = Calendar.current.dateComponents([.day, .year, .month], from: date)
+        
+        let cycle = cycles.first(where: { c in
+            let cycleStart = Calendar.current.dateComponents([.day, .year, .month], from: c.startDate)
+            let cycleEnd = Calendar.current.dateComponents([.day, .year, .month], from: c.endDate)
+            
+            var rightDate = cycleStart.year! <= dateComponents.year! && cycleEnd.year! >= dateComponents.year!
+            rightDate = rightDate && cycleStart.month! <= dateComponents.month! && cycleEnd.month! >= dateComponents.month!
+            
+            return rightDate
+        })
+        
+        return cycle
+    }
         
 }
