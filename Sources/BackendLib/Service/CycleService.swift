@@ -109,16 +109,10 @@ public class CycleService {
     }
     
     public func getCycleByDate(date: Date) -> Cycle? {
-        
         let cycle = cycles.first(where: { c in
-            var rightDate = c.startDate.timeIntervalSince1970 <= date.timeIntervalSince1970 && c.endDate.timeIntervalSince1970 >= date.timeIntervalSince1970
-            print("****************** COMPARISON ********************")
-            print("cycle date: \(c.startDate) - \(c.endDate)")
-            print("my date: \(date)")
-            print("right: \(rightDate)")
+            let rightDate = c.startDate.timeIntervalSince1970 <= date.timeIntervalSince1970 && c.endDate.timeIntervalSince1970 >= date.timeIntervalSince1970
             return rightDate
         })
-        print(cycle?.startDate)
         
         return cycle
     }
