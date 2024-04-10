@@ -43,7 +43,7 @@ public class CycleService {
     
     public func addSymptom(cycle: Cycle, symptom: SymptomType, date: Date) {
         removeSympthom(cycle: cycle, symptom: symptom, date: date)
-        cycle.sympthoms?.append(CycleSymptom(day: date, symptom: .acne))
+        cycle.sympthoms?.append(CycleSymptom(day: date, symptom: symptom))
         fetchCycles()
     }
     
