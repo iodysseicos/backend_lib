@@ -42,11 +42,13 @@ public class CycleService {
     }
     
     public func addSymptom(cycle: Cycle, symptom: SymptomType, date: Date) {
-        cycle.sympthoms?.append(CycleSymptom(day: Date(), symptom: .acne))
+        removeSympthom(cycle: cycle, symptom: symptom, date: date)
+        cycle.sympthoms?.append(CycleSymptom(day: date, symptom: .acne))
         fetchCycles()
     }
     
     public func addMood(cycle: Cycle, moodType: MoodType, date: Date) {
+        removeMood(cycle: cycle, moodType: moodType, date: date)
         cycle.moods?.append(CycleMood(date: date, mood: moodType))
         fetchCycles()
     }
